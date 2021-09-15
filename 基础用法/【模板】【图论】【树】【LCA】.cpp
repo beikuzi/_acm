@@ -29,7 +29,7 @@ int lg[maxn],dep[maxn],jmp[maxn][22];//用来保存log2（i）+1的 值
 void dfs(int u,int fa){
 	jmp[u][0]=fa;//跳2的0次方步 
 	dep[u]=dep[fa]+1;
-	for(int i=1;i<=lg[dep[u]];i++){//2分上跳可以跳的步数 
+	for(int i=1;i<=lg[dep[u]];i++){//2分上跳可以跳的步数 ，对于每个参观深入的节点 可以执行这个操作 
 		jmp[u][i]=jmp[jmp[u][i-1]][i-1]; 
 	}
 	for(int i=head[u];i!=-1;i=e[i].next){
@@ -43,7 +43,7 @@ int LCA(int x,int y){
 		x=jmp[x][lg[dep[x]-dep[y]]-1];
 	}//先快速大回跳到相同深度 
 	if(x==y)return x;
-	for(int i=lg[dep[x]]-1;i>=0;i--){
+	for(int i=lg[dep[x]]-1;i>=0;i--){//从高位到低位的二进制跳跃，保证他们跳到离公共结点2^0 
 		if(jmp[x][i]!=jmp[y][i]){
 			x=jmp[x][i],y=jmp[y][i];
 		}

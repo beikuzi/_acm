@@ -163,11 +163,11 @@ void solve(){
 	m=readi();
 	for(int i=1,crt,x,y,z;i<=m;i++){
 		crt=readi();
-		if(crt==3){//子树结点全增加 
+		if(crt==3){//子树结点全修改 
 			x=readi();z=readi();
 			adj(in[x],out[x]);
 			update(r,z);
-		}
+		}//用来线段树的只有in结点，没有out，所以就是经过多少个点就是多少个修改0 
 		else if(crt==4){//子树求和 
 			x=readi();
 			adj(in[x],out[x]);
@@ -179,5 +179,5 @@ int main()
 {	
 	init();
 	solve();
-	return 0;
+	return 0; 
 }

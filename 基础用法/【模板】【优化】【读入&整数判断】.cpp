@@ -11,6 +11,19 @@ int npow(int x,int y){
 	if(y&1)res*=x;
 	return res;
 }
+inline bool isnum(char x){
+	return '0'<=x && x<='9';
+}
+inline int readi(){
+	int x=0;
+	char ch=getchar();
+	while(!isnum(ch))ch=getchar();
+	while(isnum(x)){
+		x=x*10+ch-48;
+		ch=getchar();
+	}
+	return x;
+} 
 inline double read()
 {
 	double x=0;

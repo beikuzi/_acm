@@ -50,7 +50,7 @@ int LCA(int x,int y){
 	}//再一起共同回跳 
 	return jmp[x][0];
 }
-int n,m,r;
+int n,m,r;//以r为根节点建树 
 void init(){
 	memset(head,-1,sizeof(head));
 	for(int i=1;i<maxn;i++){

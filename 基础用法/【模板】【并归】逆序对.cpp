@@ -5,9 +5,6 @@
 using namespace std;
 const int maxn=5*1e5+7;
 typedef long long ll;
-void sl1(){//Ê÷×´Êý×é 
-	;
-}
 int t[maxn],ex[maxn];
 ll res;
 void msort(int l,int r,int c[]){//²¢¹éÅÅÐò merge

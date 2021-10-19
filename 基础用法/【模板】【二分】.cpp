@@ -6,7 +6,7 @@ const int maxn=1e6+7;
 int c[maxn]={1,2,3,4,5};
 //一个正方形二维数组，保证每行从左到右，每列从上到下都是递增
 //二分找出那个值，那么需要修改二分搜索的起始点终止点，然后多次搜索 
-void function(int n){
+void func(int n){
 	cout<<lower_bound(c,c+n,3)-c<<endl;//>=
 	cout<<upper_bound(c,c+n,3)-c;//>
 }
@@ -79,5 +79,5 @@ int main()
 //	cout<<cfind1(7,c,5);
 //	cout<<cfind1(5,c,5);
 //	cout<<cfind1(1,c,5);
-	function(5);
+	func(5);
 }

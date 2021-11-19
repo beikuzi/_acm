@@ -28,10 +28,11 @@ int lowbit(int x){
 } 
 int n,m;
 const int maxn=1e3+7;
-struct tree{
-	ll t1,t2,t3,t4;
-}t[maxn][maxn];
+
 struct op{
+	struct tree{
+		ll t1,t2,t3,t4;
+	}t[maxn][maxn];
 	void add(ll x,ll y,ll z){
 		for(int i=x;i<=n;i+=lowbit(i)){
 			for(int j=y;j<=m;j+=lowbit(j)){

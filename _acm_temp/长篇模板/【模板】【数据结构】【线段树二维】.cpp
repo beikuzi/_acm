@@ -2,9 +2,11 @@
 #include<algorithm>
 #include<cmath>
 #include<cstdio>
+#include<new>
 #include<cstring> 
 using namespace std;
 const int maxn=1e5+7;
+//typedef long long ll;
 #define ll int
 #define nl(x) (x<<1)
 #define nr(x) ((x<<1)|1)
@@ -29,6 +31,7 @@ inline ll readl(){
 	}return x;
 }
 struct tree_2{
+	ll *pt;
 	struct tree{
 		int l,r;
 		ll v,a;
@@ -46,7 +49,10 @@ struct tree_2{
 			return x<=l and r<=y;
 		}
 	}t[maxn<<2];
-	ll pt[maxn];
+	tree_2(){
+		pt=new ll[maxn]();
+	}
+	
 	void pushup(int x){
 		t[x].v=t[nl(x)].v+t[nr(x)].v;
 	}
@@ -68,6 +74,7 @@ struct tree_2{
 	}
 	void build(int l,int r){
 		bd(1,l,r);
+		delete []pt;
 	}
 	void ad(int x,int l,int r,ll k){
 		if(t[x].range(l,r)){
@@ -120,7 +127,7 @@ void solve(){
 			x=readi(),y=readi();
 			int res=0;
 			for(int i=1;i<=26;i++){
-				if(tr[i].ask(x,y)>(ll)0)res++;
+				if(tr[i].ask(x,y)>0)res++;
 			}
 			printf("%d\n",res);
 		}

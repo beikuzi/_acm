@@ -55,7 +55,7 @@ struct scino{
 			}
 		}
 	}
-	void deal(int x){//把小数位改成指定位数（包括小数点 
+	void deal(int x){//把小数位改成指定长度（包括小数点 
 		int len=dec.length();
 		if(len>=x){
 			dec=dec.substr(0,x);

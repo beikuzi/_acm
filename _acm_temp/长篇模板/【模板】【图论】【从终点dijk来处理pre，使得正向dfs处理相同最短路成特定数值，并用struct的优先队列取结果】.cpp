@@ -14,9 +14,9 @@ typedef pair<int,int>pii;
 priority_queue<pii,vector<pii>,greater<pii> >q;
 const int maxn=1e3+7,maxm=1e5+7;
 //要求有最短路就优先走最短路
-//只要经过不够的点就要补充，经过过多的点可以往后送，最后回收 
+//只要经过不够的点就要补充，经过过多的点只可以往后送，最后一次性回收 
 //最短路相同，走送出去车最少的路
-//送出去车最少的路相同，选收回来车最少的路 
+//送出去车最少相同，选收回来车最少的路 
 struct edge{
 	int v,w,next;
 }e[maxm];

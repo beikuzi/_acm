@@ -12,5 +12,7 @@ int lcm(int x,int y){
 }
 int main()
 {
-	;
+	int x=gcd(20,30);
+	int y=lcm(20,30);
+	printf("%d\n%d",x,y);
 }

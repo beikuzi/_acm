@@ -13,10 +13,10 @@ int lowbit(int x){
 } 
 int n,m;
 ll pt[maxn]; 
-struct tree{
-	ll d,f;//这里的v是初始值，以后不再更改，也没有意义 
-}t[maxn];
 struct op{
+	struct tree{
+		ll d,f;
+	}t[maxn];
 	void read(int x,ll dv){
 		t[x].d=dv;
 		t[x].f=dv*x;

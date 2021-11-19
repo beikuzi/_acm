@@ -7,7 +7,7 @@
 using namespace std;
 const int maxn=1e6+7,maxm=1e6+7;
 typedef long long ll;
-int k=-1,head[maxn],vis[maxn];
+int k=-1,head[maxn];
 int n,m;
 inline int readi(){
 	int x=0,b=1;
@@ -43,8 +43,9 @@ void add(int u,int v,int w){
 }
 //----------------------------------------
 #define M make_pair
-int dis[maxn];
 typedef pair<int,int>pii;
+
+int dis[maxn],vis[maxn];
 priority_queue<pii,vector<pii>,greater<pii> >q;
 int prim(int x){
 	int cnt=0,res=0;
